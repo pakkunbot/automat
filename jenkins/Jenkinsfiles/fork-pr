@@ -4,6 +4,11 @@ pipeline {
     }
     stages {
         stage('DEBUG') {
+            agent {
+                docker {
+                    image cliffano/studio:latest
+                }
+            }
             steps {
                 echo 'Hellooooo'
             }
