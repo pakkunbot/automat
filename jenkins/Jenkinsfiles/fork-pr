@@ -2,4 +2,9 @@ pipeline {
     agent {
         label 'docker'
     }
+    stages {
+        stage('DEBUG') {
+            echo 'Hellooooo'
+        }
+    }
 }
