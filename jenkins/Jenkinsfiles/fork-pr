@@ -1,0 +1,8 @@
+pipeline {
+    agent {
+        docker {
+            image cliffano/studio:latest
+            args ''
+        }
+    }
+}

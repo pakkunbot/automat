@@ -1,0 +1,11 @@
+---
+- name: Fork a repo, clone it, make changes, create a PR, clean the fork
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+
+    - name: Create a fork
+      shell: |
+        hub fork --org=pakkunbot
