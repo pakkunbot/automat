@@ -6,7 +6,7 @@ pipeline {
         stage('DEBUG') {
             agent {
                 docker {
-                    image cliffano/studio:latest
+                    image 'cliffano/studio:latest'
                 }
             }
             steps {
