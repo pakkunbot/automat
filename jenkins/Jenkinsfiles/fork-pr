@@ -1,9 +1,9 @@
 pipeline {
+    agent {
+        label 'docker'
+    }
     stages {
         stage('build') {
-            agent {
-                label 'docker'
-            }
             steps {
                 sh 'docker run --rm --workdir /opt/workspace -v /var/run/docker.sock:/var/run/docker.sock -v `pwd`:/opt/workspace -i -t cliffano/studio /bin/bash -c "make fork-pr"'
             }
