@@ -2,9 +2,6 @@ pipeline {
     agent {
         label 'docker'
     }
-    environment {
-        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-    }
     stages {
         stage('DEBUG') {
             agent {
@@ -12,6 +9,9 @@ pipeline {
                     image 'cliffano/studio:latest'
                     args '--user root --network host'
                 }
+            }
+            environment {
+                PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
             }
             steps {
                 echo 'Hellooooo'
