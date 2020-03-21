@@ -5,7 +5,7 @@ pipeline {
                 label 'docker'
             }
             steps {
-                docker run --rm --workdir /opt/workspace -v /var/run/docker.sock:/var/run/docker.sock -v `pwd`:/opt/workspace -i -t cliffano/studio /bin/bash -c "make fork-pr"
+                sh 'docker run --rm --workdir /opt/workspace -v /var/run/docker.sock:/var/run/docker.sock -v `pwd`:/opt/workspace -i -t cliffano/studio /bin/bash -c "make fork-pr"'
             }
         }
     }
