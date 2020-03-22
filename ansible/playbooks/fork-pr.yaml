@@ -8,4 +8,4 @@
 
     - name: Create a fork
       shell: |
-        hub fork --org=pakkunbot
+        "hub fork --org=pakkunbot"
