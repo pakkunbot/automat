@@ -1,0 +1,12 @@
+pipeline {
+    agent {
+        label 'docker-studio-macbookpro'
+    }
+    stages {
+        stage('build') {
+            steps {
+                sh 'docker run --rm --workdir /opt/workspace -v /var/run/docker.sock:/var/run/docker.sock -v `pwd`:/opt/workspace cliffano/studio /bin/bash -c "make ${params.AUTOMAT_ACTION}"'
+            }
+        }
+    }
+}
