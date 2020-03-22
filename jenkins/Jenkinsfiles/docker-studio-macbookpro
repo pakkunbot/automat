@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'docker-studio-macbookpro'
     }
+    parameters {
+        string(name: 'AUTOMAT_ACTION', defaultValue: '', description: 'Automat action, which maps directly to the Ansible playbook name')
+    }
     stages {
         stage('build') {
             steps {
